@@ -1,0 +1,30 @@
+<% include ../partials/header%>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%= founduser.firstName + " " + founduser.lastName %> </h1>
+        <div class="card">
+            <img src="<%= founduser.avatar%>" alt="user profile image">
+            <div class="card-body"><a href="mailto:<%= founduser.email%>"><%= founduser.email%></a></div>
+        </div>
+
+    </div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dignissimos earum eius enim ipsa suscipit velit vitae. Accusamus eaque facilis ipsa, minima molestiae natus necessitatibus neque, nostrum, recusandae saepe voluptatum.
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, debitis delectus eaque, eum facilis fugit iure nihil officiis quas quibusdam repellendus tempora ut, veritatis vero voluptate! Cupiditate dicta in reiciendis!
+    <div class="col-md-8">
+        <h3><%= founduser.username %> campgrounds:</h3>
+        <ul>
+        <% campgrounds.forEach((campground)=>{%>
+            <li>
+                <a href="/campgrounds/<%=campground.id%>">  <%= campground.name%> </a>
+            </li>
+        <%})%>
+        </ul>
+        <h1><%= user.username %>'s profile</h1>
+
+        <a href="/follow/<%= user.id %>"><button class="btn btn-primary">Follow <%= user.username %></button></a>
+    </div>
+</div>
+
+<% include ../partials/footer%>

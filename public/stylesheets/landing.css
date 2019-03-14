@@ -1,0 +1,81 @@
+body{
+    background-color: black;
+}
+#landing-header {
+    z-index: 1;   /* this will make the img come forward on top */
+    position: relative;     /*static is the default pos. if you use static it will ignore the z index*/
+    text-align: center;
+    padding-top: 40vh;  /*40 view height*/
+}
+
+#landing-header h1 {
+    color: #fff;
+}
+
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;    /*setting the img to the top left corner*/
+    left: 0;
+    z-index: 0;  /*this will make the the img are behind our text and button*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;   /* With absolute positioning, an element can be placed anywhere on a page*/
+    top: 0;
+    left: 0;
+    background-size: cover;  /*allow the imgs to takr entire space of the page*/
+    background-position: 50% 50%;  /*center the imgs perfectly on the page*/
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;   /* to make sure our background img are placed behind the text and the button*/
+    animation: imageAnimation 50s linear infinite;  /*var=image animation. time-50s.  linear-const speed during the animation.  infinite-so our slide show never ends*/
+}
+
+.slideshow li:nth-child(1) {
+    /*animation start at 0s*/
+    background-image: url(http://i.imgur.com/K3mPv14.jpg)
+}
+.slideshow li:nth-child(2) {
+    background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+    animation-delay: 10s;  /*start at 10s*/
+}
+.slideshow li:nth-child(3) {
+    background-image: url(http://i.imgur.com/emvhOnb.jpg);
+    animation-delay: 20s;   /*start at 20s*/
+}
+.slideshow li:nth-child(4) {
+    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+    animation-delay: 30s;
+}
+.slideshow li:nth-child(5) {
+    background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+    animation-delay: 40s;
+}
+
+@keyframes imageAnimation {  /*referring the the imageAnimation var*/
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;  /*to smoothen transition*/
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20% {
+        opacity: 1
+    }
+    30% {
+        opacity: 0
+    }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}

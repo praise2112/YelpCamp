@@ -1,0 +1,34 @@
+<% include partials/header %>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="/register" method="post" class="form-signin">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+            <label for="username" class="sr-only">Username</label>
+                <input class="form-control" type="text" name="username" placeholder="Username" id="username" required autofocus>
+            <label for="password" class="sr-only">Password</label>
+                <input class="form-control" type="password" name="password" placeholder="Password" id="password" required autofocus>
+            <label for="firstName" class="sr-only">First Name</label>
+                <input class="form-control" type="text" name="firstName" placeholder="First Name" id="firstName" required autofocus>
+            <label for="lastName" class="sr-only">Last Name</label>
+                <input class="form-control" type="text" name="lastName" placeholder="Last Name" id="lastName" required autofocus>
+            <label for="email" class="sr-only">Email</label>
+                <input class="form-control" type="email" name="email" placeholder="john@doe.com" id="email" required autofocus>
+            <label for="image" class="sr-only">Avatar</label>
+                <input class="form-control" type="text" name="avatar" placeholder="avatar image url(optional)" id="image" autofocus>
+            <label for="admin" class="sr-only">Admin Code</label>
+                <input class="form-control" type="text" name="adminCode" placeholder="Admin code(optional)" id="admin" autofocus>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up!</button>
+        </form>
+        <div class="form-signin">
+            <a href="/campgrounds">Go To campgrounds</a>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<% include partials/footer %>
